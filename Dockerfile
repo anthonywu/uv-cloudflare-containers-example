@@ -32,5 +32,8 @@ ENV PATH="/app/.venv/bin:$PATH"
 ENTRYPOINT []
 
 # Run the FastAPI server.
-EXPOSE 8080
-CMD ["uvicorn", "main:app", "--host", "10.0.0.1", "--port", "8080"]
+
+# The default port Cloudflare expects is 8080, we can customize it
+EXPOSE 30000
+# Bind to 0.0.0.0 all interfaces, but you can also just use 10.0.0.1 for Cloudflare
+CMD ["uvicorn", "main:app", "--host", "0.0.0.0", "--port", "30000"]

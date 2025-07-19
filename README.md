@@ -15,9 +15,16 @@ uv run fastapi dev
 From the repository root, build the container artifact locally:
 
 ```bash
-npm install
+npx bun install
 docker build .
 ```
+
+then run locally in your own Docker runtime and access on localhost url:
+
+```bash
+npx wrangler dev  # reads .dev.vars file
+```
+
 
 then deploy to Cloudflare with:
 

@@ -11,6 +11,9 @@
   "observability": {
     "enabled": true,
   },
+  "vars": {
+    "CONFIG_1": "this is a plaintext config you can set in wrangler.jsonc",
+  },
   "containers": [
     {
       "class_name": "Backend",
